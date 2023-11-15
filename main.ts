@@ -101,10 +101,6 @@ basic.showIcon(IconNames.Asleep)
 sound = true
 input.calibrateCompass()
 basic.forever(function () {
-    if (input.temperature() >= 25) {
-        basic.showIcon(IconNames.Skull)
-        basic.pause(5000)
-    }
     if (input.isGesture(Gesture.SixG)) {
         basic.showIcon(IconNames.Skull)
         basic.pause(5000)
