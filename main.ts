@@ -1,11 +1,22 @@
 input.onButtonPressed(Button.A, function () {
-    basic.showIcon(IconNames.Silly)
-    if (sound) {
-        soundExpression.happy.playUntilDone()
+    light2 = input.lightLevel()
+    if (light2 < 65) {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            `)
     } else {
-        basic.pause(1000)
+        basic.showIcon(IconNames.Silly)
+        if (sound) {
+            soundExpression.happy.playUntilDone()
+        } else {
+            basic.pause(1000)
+        }
+        basic.showIcon(IconNames.Asleep)
     }
-    basic.showIcon(IconNames.Asleep)
 })
 input.onButtonPressed(Button.AB, function () {
     if (sound) {
@@ -21,32 +32,66 @@ input.onButtonPressed(Button.AB, function () {
     }
 })
 input.onButtonPressed(Button.B, function () {
-    basic.showIcon(IconNames.Ghost)
-    if (sound) {
-        soundExpression.yawn.playUntilDone()
+    light2 = input.lightLevel()
+    if (light2 < 65) {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            `)
     } else {
-        basic.pause(1000)
+        basic.showIcon(IconNames.Ghost)
+        if (sound) {
+            soundExpression.yawn.playUntilDone()
+        } else {
+            basic.pause(1000)
+        }
+        basic.showIcon(IconNames.Asleep)
     }
-    basic.showIcon(IconNames.Asleep)
 })
 input.onGesture(Gesture.Shake, function () {
-    basic.showIcon(IconNames.Sad)
-    if (sound) {
-        soundExpression.sad.playUntilDone()
+    light2 = input.lightLevel()
+    if (light2 < 65) {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            `)
     } else {
-        basic.pause(1000)
+        basic.showIcon(IconNames.Sad)
+        if (sound) {
+            soundExpression.sad.playUntilDone()
+        } else {
+            basic.pause(1000)
+        }
+        basic.showIcon(IconNames.Asleep)
     }
-    basic.showIcon(IconNames.Asleep)
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    basic.showIcon(IconNames.Happy)
-    if (sound) {
-        soundExpression.giggle.playUntilDone()
+    light2 = input.lightLevel()
+    if (light2 < 65) {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            `)
     } else {
-        basic.pause(1000)
+        basic.showIcon(IconNames.Happy)
+        if (sound) {
+            soundExpression.giggle.playUntilDone()
+        } else {
+            basic.pause(1000)
+        }
+        basic.showIcon(IconNames.Asleep)
     }
-    basic.showIcon(IconNames.Asleep)
 })
+let light2 = 0
 let sound = false
 basic.showIcon(IconNames.Asleep)
 sound = true
